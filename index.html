@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            background-color: #f0f0f0;
+        }
+        
+        .app {
+            text-align: center;
+            position: relative;
+        }
+        
+        p {
+            color: pink;
+            font-size: 50px;
+            margin-bottom: 50px;
+        }
+        
+        img {
+            height: 10%;
+            width: 100px;
+            margin-bottom: 50px;
+        }
+        
+        input[type="button"],
+        button {
+            position: relative;
+            cursor: pointer;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 50px; /* making the button oval */
+            background-color: lightgreen;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        input[type="button"]:hover,
+        button:hover {
+            transform: scale(1.1);
+            background-color: #8eff8e;
+        }
+        
+        .yesbtn {
+            margin-right: 20px;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="app">
+        <p id="question">Pwede pa Crush back?</p>
+        <img src="https://media.tenor.com/J9HLFRGZ_HUAAAAi/cute.gif">
+        <input type="button" class="yesbtn" id="yes" value="YES"></input>  
+        <button id="no" class="nobtn">NO</button>
+    </div> 
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+        var noBtn = document.getElementById('no');
+        var yesBtn = document.getElementById('yes');
+        var ques = document.getElementById('question');
+        
+        noBtn.addEventListener("click", function() {
+            var changeTop = (Math.random() * ($(window).height() - $("button").height()));
+            var changeLeft = (Math.random() * ($(window).width() - $("button").width()));
+            $("button").css("margin-top", changeTop + "px");
+            $("button").css("margin-left", changeLeft + "px");
+        });
+        
+        yesBtn.addEventListener("click",function(){
+            ques.innerHTML="Tara milk tea tayo , libre ko <3";
+        });
+    </script>
+</body>
+</html>
